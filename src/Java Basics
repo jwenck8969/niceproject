@@ -1,0 +1,206 @@
+/// Java - Basics
+
+Java ist eine objektorientierte Programmiersprache,
+die eine Vielzahl von grundlegenden Konzepten und Syntax-Elementen bietet.
+Hier ist eine Zusammenfassung der wichtigsten Grundlagen und
+relevanten Syntax-Befehle in Java:
+
+///////////////////////////////////////////////////////////////
+
+// 1. Grundlegende Java-Struktur
+Jedes Java-Programm besteht aus Klassen und Methoden.
+Eine typische Java-Klasse sieht folgendermaßen aus:
+
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+
+- public class HelloWorld: Deklariert eine öffentliche Klasse namens HelloWorld.
+- public static void main(String[] args): Die main-Methode ist der Einstiegspunkt eines Java-Programms.
+- System.out.println("Hello, World!");: Gibt Text auf der Konsole aus.
+
+///////////////////////////////////////////////////////////////
+
+// 2. Datentypen
+Java ist eine stark typisierte Sprache. Die gebräuchlichsten primitiven Datentypen sind:
+
+- Ganzzahlen: byte, short, int, long
+- Gleitkommazahlen: float, double
+- Zeichen: char
+- Boolesche Werte: boolean
+
+int zahl = 42;
+double pi = 3.14;
+char buchstabe = 'A';
+boolean istWahr = true;
+
+///////////////////////////////////////////////////////////////
+
+// 3. Variablen und Konstanten
+- Variablen werden durch ihre Datentypen deklariert.
+- Konstanten werden mit dem Schlüsselwort final erstellt.
+
+int alter = 25;
+final double GRAVITATION = 9.81;
+
+///////////////////////////////////////////////////////////////
+
+// 4. Operatoren
+Java bietet viele Operatoren:
+
+- Arithmetische Operatoren: +, -, *, /, %
+- Vergleichsoperatoren: ==, !=, <, >, <=, >=
+- Logische Operatoren: &&, ||, !
+- Zuweisungsoperatoren: =, +=, -=, *=, /=, %=
+
+///////////////////////////////////////////////////////////////
+
+// 5. Kontrollstrukturen
+// 5.1. Bedingte Anweisungen
+ - if, else if, else:
+
+int zahl = 10;
+if (zahl > 0) {
+    System.out.println("Positiv");
+} else if (zahl < 0) {
+    System.out.println("Negativ");
+} else {
+    System.out.println("Null");
+}
+
+ - switch:
+
+int tag = 3;
+switch (tag) {
+    case 1:
+        System.out.println("Montag");
+        break;
+    case 2:
+        System.out.println("Dienstag");
+        break;
+    default:
+        System.out.println("Andere Tage");
+        break;
+}
+
+
+// 5.2. Schleifen
+ - for-Schleife:
+
+for (int i = 0; i < 5; i++) {
+    System.out.println("Wert von i: " + i);
+}
+
+/ - while-Schleife:
+
+int i = 0;
+while (i < 5) {
+    System.out.println("Wert von i: " + i);
+    i++;
+}
+
+ - do-while-Schleife:
+
+int i = 0;
+do {
+    System.out.println("Wert von i: " + i);
+    i++;
+} while (i < 5);
+
+///////////////////////////////////////////////////////////////
+
+// 6. Arrays
+   Arrays sind Sammlungen von Elementen desselben Datentyps.
+
+   int[] zahlen = {1, 2, 3, 4, 5};
+   System.out.println(zahlen[0]); // Ausgabe: 1
+
+///////////////////////////////////////////////////////////////
+
+// 7. Methoden
+Methoden definieren wiederverwendbare Codeblöcke.
+
+public int addieren(int a, int b) {
+    return a + b;
+}
+
+///////////////////////////////////////////////////////////////
+
+// 8. Objektorientierung
+Java ist objektorientiert, d. h., es wird mit Klassen und Objekten gearbeitet.
+// 8.1. Klassen und Objekte
+ - Eine Klasse definiert einen Datentyp, und ein Objekt ist eine Instanz dieser Klasse.
+
+   public class Auto {
+       String farbe;
+       int geschwindigkeit;
+
+       public void beschleunigen() {
+           System.out.println("Das Auto beschleunigt.");
+       }
+   }
+
+   Auto meinAuto = new Auto();
+   meinAuto.farbe = "Rot";
+   meinAuto.beschleunigen();
+
+
+// 8.2. Vererbung
+   Eine Klasse kann Eigenschaften einer anderen Klasse erben.
+
+class Tier {
+    void essen() {
+        System.out.println("Das Tier isst.");
+    }
+}
+
+class Hund extends Tier {
+    void bellen() {
+        System.out.println("Der Hund bellt.");
+    }
+}
+
+
+// 8.3. Abstrakte Klassen und Schnittstellen
+ - Abstrakte Klassen: Können nicht direkt instanziiert werden und
+ können abstrakte Methoden enthalten.
+
+ abstract class Tier {
+     abstract void lautGeben();
+ }
+
+ - Schnittstellen (Interfaces): Definieren Methoden,
+ die von Klassen implementiert werden müssen.
+
+interface Fahrbar {
+    void fahren();
+}
+
+class Auto implements Fahrbar {
+    public void fahren() {
+        System.out.println("Das Auto fährt.");
+    }
+}
+
+///////////////////////////////////////////////////////////////
+
+// 9. Fehlerbehandlung (Exceptions)
+Java verwendet try-catch-Blöcke zur Fehlerbehandlung.
+
+try {
+    int ergebnis = 10 / 0;
+} catch (ArithmeticException e) {
+    System.out.println("Fehler: " + e.getMessage());
+}
+
+///////////////////////////////////////////////////////////////
+
+10. Wichtige Schlüsselwörter
+ - public, private, protected: Zugriffsmodifikatoren
+ - static: Statische Methoden oder Variablen gehören zur Klasse, nicht zur Instanz
+ - final: Konstanten oder unveränderbare Klassen
+ - abstract: Abstrakte Klassen oder Methoden
+ - this: Verweist auf das aktuelle Objekt
+ - super: Verweist auf die Elternklasse
